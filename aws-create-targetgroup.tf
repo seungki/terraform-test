@@ -23,12 +23,13 @@ provider "aws" {
   region = "ap-northeast-2"
 }
 
+
 # Create target group
 resource "aws_lb_target_group" "test" {
   name     = "TG-TEST"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.main.id
+  vpc_id   = "vpc-d13254b8"
   tags = {
     SYSTEM = "TEST"
   }
